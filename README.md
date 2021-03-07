@@ -4,7 +4,7 @@ The objective of the projcts is to compare different Machine Learning and Deep L
 
 The Project Uses Django as a web Framework with Mysql As Backend.
 
-Algorithm Used are : 
+Algorithm Used to test are : 
 1. Naive Bayes 
 2. LSTM
 3. Descision Tree 
