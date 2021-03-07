@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block contents%}
+<section id="home" data-stellar-background-ratio="0.5">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 col-sm-12">
+                <div class="home-info">
+                    <h1>Results From Twitter Database Engine for the <br> hashtag <font
+                            style="color:#9C04E8;font-weight: bold">#{{request.session.tgname}}</font></h1>                    <h2>
+                        Positive = <font style="color:BLUE;font-weight: bold">{{dict.positiveperc}}%</font> &emsp;&emsp;
+                        Negitive = <font style="color:RED;font-weight: bold"> {{dict.negitiveperc}}% </font>&emsp;&emsp;
+                        Neutral = <font style="color:GREEN;font-weight: bold">{{dict.neutralperc}}% </font> <br/>
+                    </h2>
+                    <h1>Postive Tweets</h1>
+                    <table border="2px">
+                        <tr>
+                            <th>S.No</th>
+                            <th valign="center">Tweet</th>
+                        </tr>
+                        {% for key,value in pdict.items %}
+                        <tr>
+                            <td style="color:WHITE">{{forloop.counter}}</td>
+                            <td style="color:WHITE">{{value}}</td>
+                        </tr>
+                        {% endfor%}
+                    </table>
+                    <h1>Negitive Tweets</h1>
+                    <table border="2px">
+                        <tr>
+                            <th>S.No</th>
+                            <th>Tweet</th>
+                        </tr>
+                        {% for key,value in ndict.items %}
+                        <tr>
+                            <td style="color:WHITE">{{forloop.counter}}</td>
+                            <td style="color:WHITE">{{value}}</td>
+                        </tr>
+                        {% endfor%}
+                    </table>
+                    <h1>Neutral Tweets</h1>
+                    <table border="2px">
+                        <tr>
+                            <th>S.No</th>
+                            <th>Tweet</th>
+                        </tr>
+                        {% for key,value in nndict.items %}
+                        <tr>
+                            <td style="color:WHITE">{{forloop.counter}}</td>
+                            <td style="color:WHITE">{{value}}</td>
+                        </tr>
+                        {% endfor%}
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock%}

@@ -1,0 +1,52 @@
+{% extends 'admins/adminbase.html'%}
+{% block contents %}
+<section id="home" data-stellar-background-ratio="0.5">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 col-sm-12">
+                <div class="home-info">
+                    <section id="contact" data-stellar-background-ratio="0.5">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-12 col-sm-12">
+                                    <div class="section-title">
+                                        <h1>Chart Analysis</h1>
+                                        <div id="container" width="200" height="200"></div>
+                                        <script src="https://code.highcharts.com/highcharts.src.js"></script>
+                                        <script>
+    Highcharts.chart('container', {
+        chart: {
+            type: 'column'
+        },
+        title: {
+            text: 'Sentiment Classifier Technique'
+        },
+        xAxis: {
+           categories: [
+            {% for entry in dataset %}'{{ entry.appliedalgo }} Class'{% if not forloop.last %}, {% endif %}{% endfor %}
+          ]
+        },
+        series: [{
+            name: 'Classifier',
+            data: [
+            {% for entry in dataset %}{{ entry.dcount }}{% if not forloop.last %}, {% endif %}{% endfor %}
+          ],
+          color: 'green'
+        },]
+    });
+
+                                        </script>
+                                    </div>
+                                </div>
+                                <div class="col-md-8 col-sm-8">
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

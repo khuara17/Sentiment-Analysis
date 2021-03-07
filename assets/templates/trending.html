@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block contents%}
+<section id="home" data-stellar-background-ratio="0.5">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 col-sm-12">
+                <div class="home-info">
+                    <h1>Trending Topics</h1>
+                    <table border="2px">
+                        <tr>
+                            <th>S.No</th>
+                            <th>Tag Name</th>
+                            <th>Count</th>
+                            <th>View</th>
+                        </tr>
+                        {% for i in objects %}
+                        <tr>
+                            <td style="color:WHITE">{{forloop.counter}}</td>
+                            <td style="color:WHITE">{{i.tagname}}</td>
+                            <td style="color:WHITE">{{i.tagcount}}</td>
+                            <td style="color:WHITE"><a href="/getTrending?tgname={{i.tagname}}"
+                                                       class="btn section-btn smoothScroll">View</a></td>
+                        </tr>
+                        {% endfor%}
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock%}

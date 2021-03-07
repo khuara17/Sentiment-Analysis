@@ -1,0 +1,60 @@
+{% extends 'admins/adminbase.html'%}
+{% block contents %}
+<style type="text/css">
+</style>
+<section id="home" data-stellar-background-ratio="0.5">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 col-sm-12">
+                <div class="home-info">
+                    <section id="contact" data-stellar-background-ratio="0.5">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-12 col-sm-12">
+                                    <div class="section-title">
+                                        <h1>Vew Registered Users</h1>
+                                        <table border="2px">
+                                            <tr style="color: darkblue">
+                                                <th>S.No</th>
+                                                <th>Name</th>
+                                                <th>Email</th>
+                                                <th>Mobile</th>
+                                                <th>Address</th>
+                                                <th>City</th>
+                                                <th>State</th>
+                                                <th>Status</th>
+                                                <th>Activate</th>
+                                            </tr>
+                                            {% for i in objects %}
+                                            <tr style="color: WHITE">
+                                                <td>{{forloop.counter}}</td>
+                                                <td>{{i.name}}</td>
+                                                <td>{{i.email}}</td>
+                                                <td>{{i.mobile}}</td>
+                                                <td>{{i.address}}</td>
+                                                <td>{{i.city}}</td>
+                                                <td>{{i.state}}</td>
+                                                <td>{{i.status}}</td>
+                                                {% if i.status == 'waiting' %}
+                                                <td><a class="btn-link" href="/activatewaitedusers/?uid={{ i.id }}"
+                                                       style="color:DARKBLUE">Activate</a></td>
+                                                {% else %}
+                                                <td> Activated</td>
+                                                {% endif %}
+                                            </tr>
+                                            {% endfor %}
+                                        </table>
+                                    </div>
+                                </div>
+                                <div class="col-md-8 col-sm-8">
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

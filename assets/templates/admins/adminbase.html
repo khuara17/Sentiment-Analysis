@@ -1,0 +1,140 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Machine Learning</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css'%}">
+    <link rel="stylesheet" href="{% static 'css/magnific-popup.css'%}">
+    <link rel="stylesheet" href="{% static 'css/font-awesome.min.css'%}">     <!-- MAIN CSS -->
+    <link rel="stylesheet" href="{% static 'css/templatemo-style.css'%}">
+<script type="text/javascript">
+        window.history.forward();
+        function noBack(){
+        window.history.forward();
+        }
+    </script>
+</head>
+<body onload="noBack();" onpageshow="if(event.persisted) noBack();" onunload="">
+<!-- PRE LOADER -->
+<section class="preloader">
+    <div class="spinner">
+        <span class="spinner-rotate"></span>
+    </div>
+</section>
+<!-- MENU -->
+<section class="navbar custom-navbar navbar-fixed-top" role="navigation">
+    <div class="container">
+        <!-- MENU LINKS -->
+        <div class="collapse navbar-collapse">
+            <ul class="nav navbar-nav navbar-nav-first">
+                <li><a href="#" class="smoothScroll">Admin</a></li>
+                <li><a href="{% url 'activateusers'%}" class="smoothScroll">Users</a></li>
+                <li><a href="{% url 'adminanalysis'%}" class="smoothScroll">Analysis</a></li>
+                <li><a href="{% url 'chart' %}" class="smoothScroll">Chart</a></li>
+                <li><a href="{% url 'logout'%}" class="smoothScroll">Logout</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <h4 style="color:BLUE">Machine Learning and Deep Learning Techniques for Sentiment Analysis</h4>
+            </ul>
+        </div>
+    </div>
+</section>
+<!-- HOME -->
+{% block contents %}
+{% endblock %}
+<!-- CONTACT -->
+
+<!-- FOOTER -->
+<footer data-stellar-background-ratio="0.5">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-5 col-sm-12">
+                <div class="footer-thumb footer-info">
+                    <h2>LSTM (Long Short Term Memory)</h2>
+                    <p>It is a type of Recurrent Neural Network. Its ability to use its internal state memory to process
+                        sequences is superior. It can be used for a diverse set of modeling tasks. It is capable of
+                        storing a state over a long period of time. It overcomes the shortcomings of recurrent neural
+                        network such as the fact that the gradient vector vanishes or declines after long periods of
+                        time. The middle layer in a LSTM is a forgot gate. For effective long term learning, the forgot
+                        gate is used to decide the data that needs to be memorized and the data that needs to be
+                        forgotten. The middle layer takesdata from the input layer and the output layer displays the
+                        result. </p>
+                </div>
+            </div>
+
+            <div class="col-md-2 col-sm-4">
+                <div class="footer-thumb">
+                    <h2>Deep Learning</h2>
+                    <p>It is a more complex and detailed sub-part of Machine Learning. It consists of different types of
+                        neural networks and neural beliefs that loosely work on the principle of the neurons in a
+                        brain.</p>
+                </div>
+            </div>
+
+            <div class="col-md-2 col-sm-4">
+                <div class="footer-thumb">
+                    <h2>Decision Trees</h2>
+                    <p>Decision tree is mainly used for classification problems. The tree is segregated based on the
+                        significant attributes or features which are also known as the independent variables.</p>
+                </div>
+            </div>
+
+            <div class="col-md-3 col-sm-4">
+                <div class="footer-thumb">
+                    <h2>SVM Classifier</h2>
+                    <p>In SVM there exists an n-dimensional space where n is the number of features present in the
+                        feature vector. Each of the data items present in the training set is plotted in this n
+                        dimensional space with the value of each feature being the value of the coordinate. The main
+                        principle of this method is to find out linear separators in this n-dimensional space which best
+                        segregate the various classes.</p>
+                </div>
+            </div>
+
+            <div class="col-md-12 col-sm-12">
+                <div class="footer-bottom">
+                    <div class="col-md-6 col-sm-5">
+                        <div class="copyright-text">
+                            <p>Copyright &copy; 2019 Alexa Tech</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-sm-7">
+                        <div class="phone-contact">
+                            <p>Call us <span>(+91) 9949257870</span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+<!-- MODAL -->
+<section class="modal fade" id="modal-form" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+         aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content modal-popup">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- SCRIPTS -->
+<script src="{% static 'js/jquery.js'%}"></script>
+<script src="{% static 'js/bootstrap.min.js'%}"></script>
+<script src="{% static 'js/jquery.stellar.min.js'%}"></script>
+<script src="{% static 'js/jquery.magnific-popup.min.js'%}"></script>
+<script src="{% static 'js/smoothscroll.js'%}"></script>
+<script src="{% static 'js/custom.js'%}"></script>
+</body>
+</html>

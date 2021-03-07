@@ -1,0 +1,53 @@
+{% extends 'admins/adminbase.html'%}
+{% block contents %}
+<section id="home" data-stellar-background-ratio="0.5">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 col-sm-12">
+                <div class="home-info">
+                    <section id="contact" data-stellar-background-ratio="0.5">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-12 col-sm-12">
+                                    <div class="section-title">
+                                        <h1>Admin Home Page</h1>
+                                        <ol style="font-weight:bold">
+                                            <li style="color:BLUE">Data Collection</li>
+                                            The data collection task is the first step in the process of sentiment
+                                            analysis. Data can be taken from any of the websites or from the many data
+                                            sets of opinions and reviews available online.
+                                            <li style="color:BLUE">Pre-Processing</li>
+                                            This is the stage of cleaning the data. Words and symbols that are not
+                                            required are removed. This is done to simplify further processing. Removing
+                                            hyperlinks, repetitive words, emoticons and special characters are part of
+                                            this step. Lemmatization and Stemming is also done. Finally a reduced set of
+                                            features are taken and given to the classifier.
+                                            <li style="color:BLUE">Classification</li>
+                                            A classifier is the most important component of a sentiment analysis
+                                            framework. Classification is done into categories of negative, positive or
+                                            neutral. Usually one third of the database is used as the training set to
+                                            create the classifier. The accuracy of the classifier depends on the
+                                            training set to a large extent. Classification can be done using machine
+                                            learning classifiers such as SVM, Bayes classifier, maximum entropy
+                                            classifier, etc. However for the machine learning classifiers, before the
+                                            classifier is trained and tested, feature extraction is carried out where
+                                            Deep neural networks may also be employed to classify the
+                                            data.Classification may also be done by simply employing a deep learning
+                                            method. There are various types deep techniques in the form of neural
+                                            networks such as convolutional neural network (CNN), probabilistic neural
+                                            Network(PNN), Recurrent Neural Network, etc. that may be used.
+                                        </ol>
+                                    </div>
+                                </div>
+                                <div class="col-md-8 col-sm-8">
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

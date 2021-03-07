@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block contents %}
+<section id="home" data-stellar-background-ratio="0.5">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-sm-12">
+                <div class="home-info">
+                    <h1>A Comparative Study of Machine Learning and Deep Learning Techniques for Sentiment
+                        Analysis.</h1>
+                    <a href="#about" class="btn section-btn smoothScroll">Start a project</a>
+                    <span>
+                                   CALL US (+66) 010-020-0340
+                                   <small>For any inquiry</small>
+                              </span>
+                </div>
+            </div>
+            <div class="col-md-6 col-sm-12 ">
+                <img src="{% static 'images/bla.jpeg'%}" class="img-responsive" alt="">
+                <h1>Naive Bayes Classifier</h1>
+                <h5 style="color:White">Naive Bayes classifier is considered as very straightforward and easy to
+                    implement. It is not a single algorithm but is comprised of a collection of various classification
+                    algorithms based on the Bayes theorem; a theorem which is used to describe the probability of an
+                    event. This probabilistic classifier makes use of all the all the various features present in the
+                    feature vector, analyzing them differently, that is considering them independent of each other.</h5>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

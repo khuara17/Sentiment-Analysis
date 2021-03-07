@@ -1,0 +1,83 @@
+{% extends 'base.html'%}
+{% load static %}
+{% block contents %}
+
+<section id="home" data-stellar-background-ratio="0.5">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 col-sm-12">
+                <div class="home-info">
+                    <section id="contact" data-stellar-background-ratio="0.5">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-12 col-sm-12">
+                                    <div class="section-title">
+                                        <h1>User Registrations Here</h1>
+                                    </div>
+                                </div>
+                                <div class="col-md-8 col-sm-8">
+                                    <!-- CONTACT FORM HERE -->
+                                    <form method="POST" action="{% url 'userregister' %}">
+                                        {% csrf_token %}
+                                        <table border="1">
+                                            <tr>
+                                                <td width="250">User Name</td>
+                                                <td width="300">{{form.name}}</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Email</td>
+                                                <td>{{form.email}}</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Password</td>
+                                                <td>{{form.password}}</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Mobile</td>
+                                                <td>{{form.mobile}}</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Address</td>
+                                                <td>{{form.address}}</td>
+                                            </tr>
+                                            <tr>
+                                                <td>City</td>
+                                                <td>{{form.city}}</td>
+                                            </tr>
+                                            <tr>
+                                                <td>State</td>
+                                                <td>{{form.state}}</td>
+                                            </tr>
+                                            <tr>
+                                                <td></td>
+                                                <td>{{form.status}}</td>
+                                            </tr>
+                                            <tr>
+                                                <td><a href="{% url 'user'%}" class="submit-button">Login Here <i
+                                                        class="fa fa-angle-right" aria-hidden="true"></i></a></td>
+                                                <td>
+                                                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit"
+                                                            style="margin-left:20%;">Register
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                            <center>
+                                                {% if messages %}
+                                                {% for message in messages %}
+                                                <font color='RED'> {{ message }}</font>
+                                                {% endfor %}
+                                                {% endif %}
+                                            </center>
+                                        </table>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

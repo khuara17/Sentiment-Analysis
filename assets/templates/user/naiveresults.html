@@ -1,0 +1,36 @@
+{% extends 'user/userbase.html'%}
+{% load static %}
+{% block contents %}
+<section id="home" data-stellar-background-ratio="0.5">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 col-sm-12">
+                <div class="home-info">
+                    <section id="contact" data-stellar-background-ratio="0.5">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-12 col-sm-12">
+                                    <div class="section-title">
+                                        <h1>Niave Bayes Results </h1>
+                                        <h2>Dataset Name</h2>
+                                        <h1>{{dataset}}</h1><br/>
+                                        <h2>Currected Records</h2>
+                                        <h1>{{correct}}</h1><br/>
+                                        <h2>Total Records</h2>
+                                        <h1> {{total}}</h1><br/>
+                                        <h2>Accuracy</h2>
+                                        <h1> {{result}}%</h1><br/>
+                                    </div>
+                                </div>
+                                <div class="col-md-8 col-sm-8">
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

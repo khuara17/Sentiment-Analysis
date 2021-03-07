@@ -1,0 +1,41 @@
+{% extends 'user/userbase.html'%}
+{% load static %}
+{% block contents %}
+<section id="home" data-stellar-background-ratio="0.5">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 col-sm-12">
+                <div class="home-info">
+                    <section id="contact" data-stellar-background-ratio="0.5">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-12 col-sm-12">
+                                    <div class="section-title">
+                                        <h1>User Home Page </h1>
+                                    </div>
+                                </div>
+                                <div class="col-md-8 col-sm-8">
+                                    Available Datasets for test
+                                    <table border="2px">
+                                        <tr>
+                                            <th>S.No</th>
+                                            <th>Dataset Name</th>
+                                        </tr>
+                                        {% for key,value in dict.items %}
+                                        <tr>
+                                            <td style="color:WHITE">{{forloop.counter}}</td>
+                                            <td style="color:WHITE">{{value}}</td>
+                                        </tr>
+                                        {% endfor%}
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

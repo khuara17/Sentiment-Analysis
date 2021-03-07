@@ -1,0 +1,51 @@
+{% extends 'base.html'%}
+{% load static %}
+{% block contents %}
+<section id="home" data-stellar-background-ratio="0.5">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 col-sm-12">
+                <div class="home-info">
+                    <section id="contact" data-stellar-background-ratio="0.5">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-12 col-sm-12">
+                                    <div class="section-title">
+                                        <h1>Admin Login Here</h1>
+                                    </div>
+                                </div>
+                                <div class="col-md-8 col-sm-8">
+                                    <!-- CONTACT FORM HERE -->
+                                    <form id="contact-form" role="form" action="{% url 'adminlogincheck' %}"
+                                          method="POST">
+                                        {% csrf_token %}
+                                        <div class="col-md-6 col-sm-6">
+                                            <input type="text" class="form-control" placeholder="Your Login ID"
+                                                   id="cf-email" name="cflgname" required="">
+                                        </div>
+                                        <div class="col-md-6 col-sm-6">
+                                            <input type="password" class="form-control" placeholder="Your Password"
+                                                   id="cf-password" name="cflgpsswd" required="">
+                                        </div>
+                                        <div class="col-md-4 col-sm-12">
+                                            <input type="submit" class="form-control" name="submit" value="Login">
+                                        </div>
+                                        <center>
+                                            {% if messages %}
+                                            {% for message in messages %}
+                                            <font color='BLUE'> {{ message }}</font>
+                                            {% endfor %}
+                                            {% endif %}
+                                        </center>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
