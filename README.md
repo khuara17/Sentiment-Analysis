@@ -2,7 +2,7 @@
 
 The objective of the projcts is to compare different Machine Learning and Deep Learnign Algorithm to test their accuracy in the context of Sentimetn Analysis.
 
-The Project Uses Django as a web Framework with Mysql As Backend.
+The Project Uses Django as a web Framework with Mysql As Database.
 
 Algorithm Used to test are : 
 1. Naive Bayes 
